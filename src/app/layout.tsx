@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { DashboardShell } from "@/components/dashboard-shell";
+import { ThemeProvider } from "@/lib/theme-context";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -15,9 +16,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark">
       <body className={`${inter.variable} font-sans`}>
-        <DashboardShell>{children}</DashboardShell>
+        <ThemeProvider>
+          <DashboardShell>{children}</DashboardShell>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { Bell, Menu, Search } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Header({ onMenuClick }: { onMenuClick: () => void }) {
   return (
@@ -24,6 +25,7 @@ export function Header({ onMenuClick }: { onMenuClick: () => void }) {
       </div>
 
       <div className="flex items-center gap-2">
+                <ThemeToggle />
         <button className="relative rounded-lg p-2 text-zinc-400 hover:bg-surface-overlay">
           <Bell className="h-5 w-5" />
           <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-accent" />

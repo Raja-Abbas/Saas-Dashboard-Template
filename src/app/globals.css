@@ -2,9 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+:root,
+[data-theme="dark"] {
+  --surface: #0f1117;
+  --surface-raised: #161922;
+  --surface-overlay: #1c2030;
+  --surface-border: #2a2f42;
+  --zinc-50: #fafafa;
+  --zinc-100: #f4f4f5;
+  --zinc-200: #e4e4e7;
+  --zinc-300: #d4d4d8;
+  --zinc-400: #a1a1aa;
+  --zinc-500: #71717a;
+  --zinc-600: #52525b;
+  --zinc-700: #3f3f46;
+  --zinc-800: #27272a;
+  --zinc-900: #18181b;
+  --zinc-950: #09090b;
+}
+
+[data-theme="light"] {
+  --surface: #ffffff;
+  --surface-raised: #f8f9fb;
+  --surface-overlay: #f0f1f5;
+  --surface-border: #e2e5ed;
+  --zinc-50: #09090b;
+  --zinc-100: #18181b;
+  --zinc-200: #27272a;
+  --zinc-300: #3f3f46;
+  --zinc-400: #52525b;
+  --zinc-500: #71717a;
+  --zinc-600: #a1a1aa;
+  --zinc-700: #c4c4c7;
+  --zinc-800: #d4d4d8;
+  --zinc-900: #e4e4e7;
+  --zinc-950: #f4f4f5;
+}
+
 @layer base {
   body {
     @apply bg-surface text-zinc-100 antialiased;
+  }
+
+  [data-theme="light"] body {
+    color-scheme: light;
   }
 
   ::-webkit-scrollbar {
